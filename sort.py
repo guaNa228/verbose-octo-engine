@@ -1,11 +1,11 @@
-def bubbleSort(array):
-    
-  for i in range(len(array)):
+def insertionSort(array):
 
-    for j in range(0, len(array) - i - 1):
-
-      if array[j] > array[j + 1]:
-
-        temp = array[j]
-        array[j] = array[j+1]
-        array[j+1] = temp
+    for step in range(1, len(array)):
+        key = array[step]
+        j = step - 1
+     
+        while j >= 0 and key < array[j]:
+            array[j + 1] = array[j]
+            j = j - 1
+        
+        array[j + 1] = key
