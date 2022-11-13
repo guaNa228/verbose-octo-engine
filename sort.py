@@ -1,11 +1,19 @@
-def insertionSort(array):
+def shellSort(arr):
+ 
+    n = len(arr)
+    gap = n/2
+ 
+    while gap > 0:
+ 
+        for i in range(gap,n):
+ 
+            temp = arr[i]
+ 
+            j = i
+            while  j >= gap and arr[j-gap] >temp:
+                arr[j] = arr[j-gap]
+                j -= gap
+ 
+            arr[j] = temp
+        gap /= 2
 
-    for step in range(1, len(array)):
-        key = array[step]
-        j = step - 1
-     
-        while j >= 0 and key < array[j]:
-            array[j + 1] = array[j]
-            j = j - 1
-        
-        array[j + 1] = key
